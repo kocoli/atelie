@@ -1,0 +1,36 @@
+/*Botão principal*/
+.btn-primary {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 30px;
+    background: var(--cor-principal);
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px var(--sombra);
+}
+
+.btn-primary:hover {
+    background: var(--cor-hover);
+    transform: translateY(-2px);
+}
+
+/*Botão secundário*/
+.btn-secondary {
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    border: 2px solid var(--cor-principal);
+    background: transparent;
+    color: var(--cor-principal);
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-secondary:hover {
+    background: var(--sombra);
+    border: 2px solid var(--cinza-texto);
+    color: var(--cinza-texto);
+}

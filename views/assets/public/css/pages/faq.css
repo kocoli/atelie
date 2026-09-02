@@ -1,0 +1,84 @@
+/* FAQ */
+
+.faq {
+    padding: 5rem 8%;
+    min-height: 80vh;
+    background: var(--bg);
+}
+
+.faq h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--cor-escuro);
+    margin-bottom: 1rem;
+}
+
+.faq-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    color: var(--cinza-texto);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    margin-bottom: .5rem;
+    background: white;
+    padding: 1.8rem;
+    border-radius: 20px;
+    border-left: 6px solid var(--cor-principal);
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.12);
+    transition: all .3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.18);
+}
+
+.faq-item h3 {
+    color: var(--cor-escuro);
+    margin-bottom: .8rem;
+    font-size: 1.2rem;
+}
+
+.faq-item p {
+    color: var(--cinza-texto);
+    line-height: 1.7;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--cor-escuro);
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    float: right;
+    font-size: 1.3rem;
+}
+
+.faq-item[open] summary::after {
+    content: "X";
+}
+
+.faq-item p {
+    margin-top: 1rem;
+}

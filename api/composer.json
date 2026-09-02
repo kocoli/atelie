@@ -1,0 +1,30 @@
+{
+  "name": "nicoli/atelie",
+  "description": "Sistema de gestão para ateliês e artesãos",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Nicóli Pereira Elesbão",
+      "email": "seu-email@exemplo.com",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Support/Helpers.php",
+      "source/Config/Config.php"
+    ]
+  },
+  "require": {
+    "php": "^8.1",
+    "ext-pdo": "*",
+    "coffeecode/router": "2.0.2",
+    "firebase/php-jwt": "^7.0"
+  }
+}

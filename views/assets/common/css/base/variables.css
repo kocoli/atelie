@@ -1,0 +1,39 @@
+.rosa {
+    --cor-principal: #ff69b4;
+    --cor-claro: #ffd6e7;
+    --cor-hover: #ff4fa2;
+    --cor-escuro: #d63384;
+
+    --branco: #ffffff;
+    --cinza-texto: #444444;
+
+    --sombra: rgba(255, 105, 180, 0.2);
+
+    --bg: linear-gradient( 135deg, #fff0f7, #ffe4f1, #ffd6e7);
+}
+
+.roxo {
+    --cor-principal: #9b59b6;
+    --cor-claro: #e8d5f2;
+    --cor-hover: #8e44ad;
+    --cor-escuro: #6c3483;
+
+    --branco: #ffffff;
+
+    --sombra: rgba(155, 89, 182, 0.2);
+
+    --bg: linear-gradient( 135deg, #f8f0fc, #eee0f7, #e8d5f2);
+}
+
+.tikerbell {
+    --cor-principal: #78A85A;
+    --cor-claro: #DCECC8;
+    --cor-hover: #669447;
+    --cor-escuro: #6B4F3A;
+
+    --branco: #ffffff;
+
+    --sombra: rgba(120, 168, 90, 0.2);
+
+    --bg: linear-gradient( 135deg, #F3F8E9, #E4EFD3, #DCECC8);
+}

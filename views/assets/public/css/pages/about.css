@@ -1,0 +1,49 @@
+.about-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 6rem 8%;
+    text-align: center;
+    background: var(--bg);;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-content {
+    padding: 5rem 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.about-card {
+    background: var(--bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255,105,180,.15);
+}
+
+.about-card h2 {
+    margin-bottom: 1rem;
+}
+
+.about-card p,
+.about-card li {
+    color: var(--cinza-texto);
+    line-height: 1.8;
+}
+
+.about-card ul {
+    list-style: none;
+}

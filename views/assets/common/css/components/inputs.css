@@ -1,0 +1,15 @@
+input, textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid var(--cor-claro);
+    border-radius: 15px;
+    outline: none;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 10px rgba(255, 105, 180, .2);
+}

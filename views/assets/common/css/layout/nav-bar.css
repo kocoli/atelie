@@ -1,0 +1,26 @@
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-bar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}

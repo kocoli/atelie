@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra vertical */
+  height: 12px; /* Altura da barra horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--branco); /* Cor de fundo do trilho */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-principal); /* Cor rosa da barra de rolagem (meia rosa) */
+  border-radius: 6px; /* Bordas arredondadas */
+}
+
+/* Para navegadores modernos (Firefox, etc.) */
+html {
+  scrollbar-color: var(--cor-principal) #f1f1f1; /* Cor da barra e cor do fundo */
+}

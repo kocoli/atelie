@@ -1,0 +1,11 @@
+.nav-bar a {
+    color: var(--cinza-texto);
+}
+
+.nav-bar a::after {
+    background: var(--cor-principal);
+}
+
+.nav-bar a:hover {
+    color: var(--cor-principal);
+}

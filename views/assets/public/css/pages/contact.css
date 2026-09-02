@@ -1,0 +1,96 @@
+/* HERO
+
+.contact-hero {
+    text-align: center;
+    padding: 2rem 1%;
+    background: var(--bg);
+}
+
+.contact-hero h1 {
+    margin-bottom: 1rem;
+}
+
+.contact-hero p {
+    font-size: 1.1rem;
+} */
+
+/* CONTAINER */
+
+.contact-container {
+    padding: 2rem 8%;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+
+    align-items: center;
+}
+
+/* CARD DE INFORMAÇÕES */
+
+.contact-info {
+    background: var(--cor-claro);
+    padding: 2rem;
+    border-radius: 25px;
+
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.15);
+}
+
+.contact-info h2 {
+    color: var(--cor-escuro);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 1.2rem;
+    color: var(--cinza-texto);
+    font-size: 1.05rem;
+}
+
+.contact-info i {
+    color: var(--cor-principal);
+    width: 25px;
+    margin-right: .5rem;
+}
+
+/* FORMULÁRIO */
+
+.contact-form {
+    background: white;
+
+    padding: 2.5rem;
+    border-radius: 25px;
+
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form h1 {
+    text-align: center;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form button {
+    align-self: center;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.3rem;
+    }
+
+}
