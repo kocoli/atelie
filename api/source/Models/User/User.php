@@ -100,6 +100,16 @@ class User extends Model
         $this->photo = $photo;
     }
 
+    public function getActive(): ?int
+    {
+        return $this->active;
+    }
+
+    public function setActive(?int $active): void
+    {
+        $this->active = $active;
+    }
+
     public function getToken(): ?string
     {
         return $this->token;

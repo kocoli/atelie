@@ -29,9 +29,11 @@ $route->namespace("source\Controller");
 
 $route->group("/users");
 $route->get("/", "Users:listUsers"); //listar usuários
+$route->get("/{userId}", "Users:selectUserById"); //listar usuários pelo id
 $route->post("/register","Users:register"); // Registrar usuário comum
 $route->post("/login","Users:auth"); // login de usuário comum
 $route->put("/update","Users:update"); // update de usuário comum
+$route->put("/password","Users:updatePassword"); // update de senha 
 $route->delete("/inactive", "Users:inactive"); //active = 0
 $route->delete("/delete", "Users:deleteRegister"); //Exclui de vez
 

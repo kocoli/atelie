@@ -47,7 +47,7 @@
             </form>
 
             <div class="auth-links">
-                <a href="#">Esqueci minha senha</a>
+                <a href="forgotPass.php">Esqueci minha senha</a>
 
                 <p>
                     Não possui conta?

@@ -8,20 +8,46 @@ use Source\Models\Order\Status;
 
 class Orders extends Api {
 
-    public function selectAll(array $data) : void {
+    public function selectAll(array $data): void
+    {
+        if (!$this->authToken(2)) {
 
-        if(!$this->authToken (2)){
             $this->call(
                 401,
                 "unauthorized",
                 "Usuário não está autenticado (sem token ou token inválido).",
-                "error")->back();
+                "error"
+            )->back();
+
             return;
         }
 
-        $orders = new Order();
+        $order = new Order();
+        $orders = $order->selectAll();
 
-        $this->call(200, "success", "Lista de encomendas", "success")->back($orders->selectAll());
+        $response = [];
+
+        foreach ($orders as $orderData) {
+
+            $customer = new Customer();
+            $customer->selectById($orderData->customer_id);
+
+            $status = new Status();
+            $status->selectById($orderData->status_id);
+
+            $response[] = [
+                "id" => $orderData->id,
+                "client" => $customer->getName(),
+                "status" => $status->getStatus()
+            ];
+        }
+
+        $this->call(
+            200,
+            "success",
+            "Lista de encomendas",
+            "success"
+        )->back($response);
     }
 
     public function selectById(array $data) : void {

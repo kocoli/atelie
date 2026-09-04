@@ -93,6 +93,33 @@ class Users extends Api
         $this->call(200, "success", "Lista de usuários", "success")->back($user->selectAll());
     }
 
+    public function selectUserById(array $data) : void {
+
+        if(!isset($data['userId']) || empty($data['userId'])) {
+            $this->call(400,
+                "bad_request",
+                "O id do usuário é obrigatório e deve ser um inteiro.",
+                "error")->back();
+            return;
+        }
+
+        $user = new User();
+
+        if (!$user->selectById($data['userId'])) {
+            $this->call(500, "internal_server_error", $user->getErrorMessage(), "error")->back();
+            return;           
+        }
+
+        $response = [
+            "type_id" => $user->getTypeId(),
+            "name" => $user->getName(),
+            "email" => $user->getEmail(),
+            "photo" => $user->getPhoto(),
+        ];
+
+        $this->call(200, "success", "Usuário selecionado", "success")->back($response);
+    }
+
     public function update (array $data): void
     {
         if(!$this->authToken (2)){
@@ -108,10 +135,10 @@ class Users extends Api
         $user = new User(
             $this->userAuthId,
             2,
-            $data['name'],
-            $data['email'],
-            $data['password'],
-            $data['photo']
+            $data['name'] ?? null,
+            $data['email'] ?? null,
+            null,
+            $data['photo'] ?? null
         );
 
         if (!$user->updateById($this->userAuthId)) {
@@ -128,6 +155,39 @@ class Users extends Api
         ];
 
         $this->call(200,"success","Usuário atualizado com sucesso","success")->back($response);
+    }
+
+    public function updatePassword(array $data) : void {
+
+        if(!$this->authToken (2)){
+            $this->call(
+                401,
+                "unauthorized",
+                "Usuário não está autenticado (sem token ou token inválido).",
+                "error")->back();
+            return;
+        }
+
+        $user = new User(
+            $this->userAuthId,
+            2,
+            null,
+            null,
+            $data['password'],
+            null
+        );
+
+        if (!$user->updateById($this->userAuthId)) {
+            $this->call(500, "internal_server_error", $user->getErrorMessage(), "error")->back();
+            return;
+        }
+
+        $response = [
+            "name" => $user->getName(),
+            "email" => $user->getEmail()
+        ];
+
+        $this->call(200,"success","Senha alterada com sucesso","success")->back($response);
     }
 
     //users admins
